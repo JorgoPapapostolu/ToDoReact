@@ -26,6 +26,12 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   }
 
+  .rightButtons {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: row;
+  }
 
   .todoBox {
     display: flex;
