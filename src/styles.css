@@ -34,6 +34,10 @@
     width: 100%;
   }
 
+  .textInput {
+    width: 100%;
+  }
+
   .todoBox {
     display: flex;
     flex-direction: column;

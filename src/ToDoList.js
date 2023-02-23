@@ -65,7 +65,9 @@ export default function Todo() {
               <span className="todoRow" key={index}>
                 {inEdit !== index ? (
                   <>
+                    <div className="textInput">
                     <span className={todo.done ? "name-done" : "name"}>{todo.name}</span>
+                    </div>
                     <div className="rightButtons">
                     <button onClick={() => deleteTask(index)}>Delete</button>
                     <button onClick={() => setInEdit(index)}>Edit</button>
