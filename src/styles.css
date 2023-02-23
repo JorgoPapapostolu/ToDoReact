@@ -35,14 +35,15 @@
     justify-content: center;
     padding: 1rem;
     min-width: 20%;
-    max-width: 20%;
-    box-shadow: -15px -15px 0px 0px rgba(100, 100, 100, 0.1);
+    max-width: 25%;
+    box-shadow: -20px -20px 0px 0px rgba(0, 0, 0, 0.13);
   }
   
   .container {
     display: flex;
     gap: 1rem;
     height: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   .container input {
@@ -56,15 +57,34 @@
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    width: 3rem;
+    width: 5rem;
+    background:rgba(0, 0, 0, 0);
+    border-color: white;
+    cursor: pointer;
   }
   
   .list {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     min-width: 100%;
+  }
+
+  .list input {
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+
+  .list button {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    width: 4rem;
+    background:rgba(0, 0, 0, 0);
+    border-color: white;
+    cursor: pointer;
   }
   
   .todoRow {
@@ -73,10 +93,7 @@
     padding: 0.5rem;
     min-width: 100%;
     color: white;
-  }
-
-  .todoRow button {
-
+    display: flex;
   }
   
   .name {
