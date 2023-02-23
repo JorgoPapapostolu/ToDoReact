@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 export default function Todo() {
   const [newTask, setnewTask] = useState("");
   const [todos, setTodos] = useState([]);
-  const [inEdit, setInEdit] = useState(-1);
+  const [inEdit, setInEdit] = useState();
   const [editValue, setEditValue] = useState("");
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function Todo() {
       }
     }
     setTodos(newEditedTask);
-    setInEdit(-1);
+    setInEdit(null);
   };
 
   const setFinished = (index) => {
@@ -104,7 +104,7 @@ export default function Todo() {
                     placeholder="edit Task"
                   />
                   <button onClick={() => editTask(index)}>Save</button>
-                  <button onClick={() => setInEdit(-1)}>Cancel</button>
+                  <button onClick={() => setInEdit(null)}>Cancel</button>
                 </>
               )}
             </span>
