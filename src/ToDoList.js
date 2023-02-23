@@ -29,7 +29,11 @@ export default function Todo() {
 
   const deleteTask = (index) => {
     const copyOfTodos = todos.slice();
+    if (copyOfTodos.length === 1) {
+      setTodos([]);
+    }
     copyOfTodos.splice(index, 1);
+    localStorage.setItem("todos", JSON.stringify(copyOfTodos));
     setTodos(copyOfTodos);
   };
 
@@ -38,7 +42,7 @@ export default function Todo() {
     const newEditedTask = [];
     for (let i = 0; i < copyOfTodos.length; i++) {
       if (index === i) {
-        newEditedTask.push({ name: editValue, done: false });
+        newEditedTask.push({ name: editValue, done: todos[index].done });
       } else {
         newEditedTask.push(copyOfTodos[i]);
       }
