@@ -7,11 +7,15 @@ export default function Todo() {
   const [editValue, setEditValue] = useState("");
 
   useEffect(() => {
-    const savedTodos = localStorage.getItem("todos");
-    if (savedTodos) {
-      setTodos(JSON.parse(savedTodos));
+    if (!todos.length) {
+      const savedTodos = localStorage.getItem("todos");
+      if (savedTodos) {
+        setTodos(JSON.parse(savedTodos));
+      }
+    } else {
+      localStorage.setItem("todos", JSON.stringify(todos));
     }
-  }, []);
+  }, [todos]); // Was muss geändert werden damit useEffect ausgeführt wird
 
   const addTask = () => {
     if (!newTask.length) {
@@ -21,16 +25,12 @@ export default function Todo() {
     copyOfTodos.push({ name: newTask, done: false });
     setTodos(copyOfTodos);
     setnewTask("");
-
-    localStorage.setItem("todos", JSON.stringify(copyOfTodos));
   };
 
   const deleteTask = (index) => {
     const copyOfTodos = todos.slice();
     copyOfTodos.splice(index, 1);
     setTodos(copyOfTodos);
-
-    localStorage.setItem("todos", JSON.stringify(copyOfTodos));
   };
 
   const editTask = (index) => {
@@ -45,8 +45,6 @@ export default function Todo() {
     }
     setTodos(newEditedTask);
     setInEdit(-1);
-
-    localStorage.setItem("todos", JSON.stringify(newEditedTask));
   };
 
   const setFinished = (index) => {
@@ -60,8 +58,6 @@ export default function Todo() {
       }
     }
     setTodos(newEditedTask);
-
-    localStorage.setItem("todos", JSON.stringify(newEditedTask));
   };
 
   return (
