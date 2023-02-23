@@ -31,6 +31,11 @@
     align-items: flex-end;
     justify-content: flex-end;
     flex-direction: row;
+    width: 100%;
+  }
+
+  .textInput {
+    width: 100%;
   }
 
   .todoBox {
